@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibration API Example</title>
+</head>
+<body>
+    <h1>Vibration API Example</h1>
+    <p>Press the button below to make your phone vibrate:</p>
+    <button id="vibrateButton">Vibrate</button>
+
+    <script>
+        const vibrateButton = document.getElementById('vibrateButton');
+
+        vibrateButton.addEventListener('click', () => {
+            // Check if the Vibration API is supported by the browser
+            if ("vibrate" in navigator) {
+                // Vibrate for 1000 milliseconds (1 second)
+                navigator.vibrate(1000);
+            } else {
+                alert("Vibration API is not supported in your browser.");
+            }
+        });
+    </script>
+</body>
+</html>
